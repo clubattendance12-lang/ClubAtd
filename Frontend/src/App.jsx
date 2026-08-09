@@ -906,40 +906,78 @@ export default function App() {
                 </button>
 
                 <div className="card-header-styled">
-                  <h2>Institution Code</h2>
+                  <h2>Select Institution</h2>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginTop: 4 }}>
+                    Choose your campus to continue
+                  </p>
                 </div>
-                <form onSubmit={(e) => {
-                  e.preventDefault();
-                  const clean = instituteCodeInput.toUpperCase().trim();
-                  if (clean === "KIMS1123" || clean === "KIT428" || clean === "KIP551") {
-                    setVerifiedInstituteCode(clean);
-                    setAuthScreen('student_auth');
-                    setStudentAction('Login');
-                    clearForms();
-                  } else {
-                    setInstituteCodeError("Invalid Institution Code. Access restricted.");
-                  }
-                }} className="form-group">
-                  <div className="input-wrapper">
-                    <label className="input-label">INSTITUTION CODE</label>
-                    <input
-                      type="text"
-                      className="styled-input"
-                      value={instituteCodeInput}
-                      onChange={(e) => {
-                        setInstituteCodeInput(e.target.value);
-                        setInstituteCodeError("");
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '20px' }}>
+                  {[
+                    { code: "KIT428", name: "KIET / Engineering Campus", courses: "B.Tech, Polytechnic" },
+                    { code: "KIMS1123", name: "KIMS / Management & Computer Studies", courses: "BBA, BCA, MCA, MBA" },
+                    { code: "KIP551", name: "KIP / Pharmacy Campus", courses: "B.Pharma, D.Pharma" }
+                  ].map((inst) => (
+                    <button
+                      key={inst.code}
+                      type="button"
+                      onClick={() => {
+                        setVerifiedInstituteCode(inst.code);
+                        const available = getCoursesForCampus(inst.code);
+                        if (available && available.length > 0) {
+                          setRegCourse(available[0]);
+                        }
+                        setAuthScreen('student_auth');
+                        setStudentAction('Login');
+                        clearForms();
                       }}
-                      autoFocus
-                    />
-                  </div>
-
-                  {instituteCodeError && <div style={{ color: 'var(--danger)', fontSize: 12, fontWeight: 700 }}>{instituteCodeError}</div>}
-
-                  <button type="submit" className="primary-btn" style={{ backgroundColor: 'var(--secondary)' }}>
-                    Verify Institute
-                  </button>
-                </form>
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '16px 18px',
+                        background: 'var(--card-bg)',
+                        border: '1px solid var(--border)',
+                        borderRadius: '12px',
+                        color: 'var(--text-primary)',
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'all 0.2s ease',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--primary)';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.boxShadow = '0 6px 16px rgba(99, 102, 241, 0.25)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--border)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                      }}
+                    >
+                      <div>
+                        <div style={{ fontWeight: 700, fontSize: '0.98rem' }}>{inst.name}</div>
+                        <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+                          Courses: {inst.courses}
+                        </div>
+                      </div>
+                      <span style={{
+                        padding: '4px 10px',
+                        borderRadius: '6px',
+                        background: 'var(--logo-bg)',
+                        color: 'var(--primary)',
+                        fontSize: '0.78rem',
+                        fontWeight: 700,
+                        border: '1px solid var(--border)',
+                        whiteSpace: 'nowrap',
+                        marginLeft: '12px'
+                      }}>
+                        {inst.code}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
@@ -947,7 +985,7 @@ export default function App() {
               <div className="glass-card">
                 <button className="secondary-btn" onClick={() => setAuthScreen('student_code')} style={{ marginBottom: 20 }}>
                   <ArrowLeft size={16} />
-                  <span>Back to Verify Code</span>
+                  <span>Change Institution ({verifiedInstituteCode})</span>
                 </button>
 
                 <div className="card-header-styled">
