@@ -85,21 +85,28 @@ export interface AdminUpdateResult {
   student?: Student;
 }
 
+export const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'https://clubatd.onrender.com').replace(/\/$/, '');
+
+function getUrl(endpoint: string): string {
+  if (endpoint.startsWith('http://') || endpoint.startsWith('https://')) return endpoint;
+  return `${API_BASE}${endpoint.startsWith('/') ? '' : '/'}${endpoint}`;
+}
+
 // REST API calls to our Express backend
 export async function getStudents(): Promise<Student[]> {
-  const res = await fetch('/api/students');
+  const res = await fetch(getUrl('/api/students'));
   if (!res.ok) throw new Error("Failed to fetch students");
   return res.json();
 }
 
 export async function getAdmins(): Promise<Admin[]> {
-  const res = await fetch('/api/admins');
+  const res = await fetch(getUrl('/api/admins'));
   if (!res.ok) throw new Error("Failed to fetch admins");
   return res.json();
 }
 
 export async function getRecords(): Promise<AttendanceRecord[]> {
-  const res = await fetch('/api/records');
+  const res = await fetch(getUrl('/api/records'));
   if (!res.ok) throw new Error("Failed to fetch records");
   return res.json();
 }
@@ -120,7 +127,7 @@ export async function registerStudent(fields: {
   clubName: string;
   passwordPlain: string;
 }): Promise<RegisterResult> {
-  const res = await fetch('/api/students/register', {
+  const res = await fetch(getUrl('/api/students/register'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(fields)
@@ -130,7 +137,7 @@ export async function registerStudent(fields: {
 }
 
 export async function authenticateStudent(loginInput: string, passwordPlain: string): Promise<Student | null> {
-  const res = await fetch('/api/students/login', {
+  const res = await fetch(getUrl('/api/students/login'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ loginInput, passwordPlain })
@@ -141,7 +148,7 @@ export async function authenticateStudent(loginInput: string, passwordPlain: str
 }
 
 export async function generatePasswordResetOtp(email: string): Promise<string | null> {
-  const res = await fetch('/api/students/generate-otp', {
+  const res = await fetch(getUrl('/api/students/generate-otp'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email })
@@ -152,7 +159,7 @@ export async function generatePasswordResetOtp(email: string): Promise<string | 
 }
 
 export async function resetStudentPasswordWithOtp(email: string, otp: string, newPasswordPlain: string): Promise<boolean> {
-  const res = await fetch('/api/students/reset-password', {
+  const res = await fetch(getUrl('/api/students/reset-password'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, otp, newPasswordPlain })
@@ -163,7 +170,7 @@ export async function resetStudentPasswordWithOtp(email: string, otp: string, ne
 }
 
 export async function updateStudentClub(collegeId: string, newClub: string): Promise<Student | null> {
-  const res = await fetch('/api/students/club', {
+  const res = await fetch(getUrl('/api/students/club'), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ collegeId, newClub })
@@ -173,14 +180,14 @@ export async function updateStudentClub(collegeId: string, newClub: string): Pro
 }
 
 export async function deleteStudent(collegeId: string): Promise<void> {
-  const res = await fetch(`/api/students/${encodeURIComponent(collegeId)}`, {
+  const res = await fetch(getUrl(`/api/students/${encodeURIComponent(collegeId)}`), {
     method: 'DELETE'
   });
   if (!res.ok) throw new Error("Failed to delete student");
 }
 
 export async function authenticateAdmin(adminId: string, passwordPlain: string): Promise<Admin | null> {
-  const res = await fetch('/api/admins/login', {
+  const res = await fetch(getUrl('/api/admins/login'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ adminId, passwordPlain })
@@ -191,7 +198,7 @@ export async function authenticateAdmin(adminId: string, passwordPlain: string):
 }
 
 export async function registerRegularAdmin(adminId: string, passwordPlain: string): Promise<boolean> {
-  const res = await fetch('/api/admins/register', {
+  const res = await fetch(getUrl('/api/admins/register'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ adminId, passwordPlain })
@@ -202,7 +209,7 @@ export async function registerRegularAdmin(adminId: string, passwordPlain: strin
 }
 
 export async function promoteAdmin(adminId: string): Promise<boolean> {
-  const res = await fetch('/api/admins/promote', {
+  const res = await fetch(getUrl('/api/admins/promote'), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ adminId })
@@ -213,7 +220,7 @@ export async function promoteAdmin(adminId: string): Promise<boolean> {
 }
 
 export async function deleteAdmin(adminId: string): Promise<void> {
-  const res = await fetch(`/api/admins/${encodeURIComponent(adminId)}`, {
+  const res = await fetch(getUrl(`/api/admins/${encodeURIComponent(adminId)}`), {
     method: 'DELETE'
   });
   if (!res.ok) throw new Error("Failed to delete admin");
@@ -224,7 +231,7 @@ export async function scanAndMarkAttendance(
   currentClub: string,
   markedByAdminId: string
 ): Promise<AttendanceResult> {
-  const res = await fetch('/api/attendance/scan', {
+  const res = await fetch(getUrl('/api/attendance/scan'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ qrPayload, currentClub, markedByAdminId })
@@ -240,7 +247,7 @@ export async function updateAttendanceStatusManually(
   clubName: string,
   markedByAdminId: string
 ): Promise<void> {
-  const res = await fetch('/api/attendance/manual', {
+  const res = await fetch(getUrl('/api/attendance/manual'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ studentId, date, status, clubName, markedByAdminId })
@@ -253,7 +260,7 @@ export async function getUnsyncedRecords(): Promise<AttendanceRecord[]> {
 }
 
 export async function markRecordsSynced(ids: number[]): Promise<void> {
-  const res = await fetch('/api/records/sync', {
+  const res = await fetch(getUrl('/api/records/sync'), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ids })
@@ -314,7 +321,7 @@ export async function updateStudentProfile(
     profileImageUri?: string | null;
   }
 ): Promise<Student | null> {
-  const res = await fetch('/api/students/profile', {
+  const res = await fetch(getUrl('/api/students/profile'), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ collegeId, ...fields })
@@ -337,7 +344,7 @@ export async function adminUpdateStudent(
     clubName: string;
   }
 ): Promise<AdminUpdateResult> {
-  const res = await fetch(`/api/students/${encodeURIComponent(oldCollegeId)}`, {
+  const res = await fetch(getUrl(`/api/students/${encodeURIComponent(oldCollegeId)}`), {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(fields)
@@ -363,7 +370,7 @@ export async function updateAdminProfile(
   adminId: string,
   profileImageUri?: string | null
 ): Promise<Admin | null> {
-  const res = await fetch('/api/admins/profile', {
+  const res = await fetch(getUrl('/api/admins/profile'), {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ adminId, profileImageUri })
