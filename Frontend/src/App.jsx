@@ -791,10 +791,10 @@ export default function App() {
       if (!sheetSortColumn) return 0;
       let valA = a[sheetSortColumn] || "";
       let valB = b[sheetSortColumn] || "";
-      
+
       valA = valA.toString().toLowerCase();
       valB = valB.toString().toLowerCase();
-      
+
       if (valA < valB) return sheetSortDirection === 'asc' ? -1 : 1;
       if (valA > valB) return sheetSortDirection === 'asc' ? 1 : -1;
       return 0;
@@ -914,7 +914,7 @@ export default function App() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '20px' }}>
                   {[
-                    { code: "KIT428", name: "KIET / Engineering Campus", courses: "B.Tech, Polytechnic" },
+                    { code: "KIT428", name: "KIT / Engineering Campus", courses: "B.Tech, Polytechnic" },
                     { code: "KIMS1123", name: "KIMS / Management & Computer Studies", courses: "BBA, BCA, MCA, MBA" },
                     { code: "KIP551", name: "KIP / Pharmacy Campus", courses: "B.Pharma, D.Pharma" }
                   ].map((inst) => (
@@ -1310,17 +1310,17 @@ export default function App() {
                   </div>
                   <label className="secondary-btn" style={{ padding: '6px 12px', fontSize: 12, cursor: 'pointer', display: 'inline-flex', alignSelf: 'center' }}>
                     Upload Photo
-                    <input 
-                      type="file" 
-                      accept="image/*" 
-                      style={{ display: 'none' }} 
-                      onChange={handleProfilePhotoChange} 
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style={{ display: 'none' }}
+                      onChange={handleProfilePhotoChange}
                     />
                   </label>
                   {editPhoto && (
-                    <button 
-                      type="button" 
-                      className="link-btn" 
+                    <button
+                      type="button"
+                      className="link-btn"
                       style={{ color: 'var(--danger)', fontSize: 11, marginTop: 4, display: 'inline-flex', alignSelf: 'center' }}
                       onClick={() => setEditPhoto(null)}
                     >
@@ -1331,22 +1331,22 @@ export default function App() {
 
                 <div className="input-wrapper">
                   <label className="input-label">EMAIL ADDRESS</label>
-                  <input 
-                    type="email" 
-                    className="styled-input" 
-                    value={editEmail} 
-                    onChange={(e) => setEditEmail(e.target.value)} 
+                  <input
+                    type="email"
+                    className="styled-input"
+                    value={editEmail}
+                    onChange={(e) => setEditEmail(e.target.value)}
                     required
                   />
                 </div>
 
                 <div className="input-wrapper">
                   <label className="input-label">CONTACT NUMBER</label>
-                  <input 
-                    type="tel" 
-                    className="styled-input" 
-                    value={editPhone} 
-                    onChange={(e) => setEditPhone(e.target.value)} 
+                  <input
+                    type="tel"
+                    className="styled-input"
+                    value={editPhone}
+                    onChange={(e) => setEditPhone(e.target.value)}
                     required
                   />
                 </div>
@@ -1373,10 +1373,10 @@ export default function App() {
                   <button type="submit" className="primary-btn" style={{ flex: 1, backgroundColor: 'var(--secondary)' }}>
                     Save Changes
                   </button>
-                  <button 
-                    type="button" 
-                    className="secondary-btn" 
-                    style={{ flex: 1 }} 
+                  <button
+                    type="button"
+                    className="secondary-btn"
+                    style={{ flex: 1 }}
                     onClick={() => setIsEditingProfile(false)}
                   >
                     Cancel
@@ -1388,10 +1388,10 @@ export default function App() {
                 <div className="profile-header">
                   <div className="profile-avatar-circle" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {currentStudent.profileImageUri ? (
-                      <img 
-                        src={currentStudent.profileImageUri} 
-                        alt="Profile" 
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      <img
+                        src={currentStudent.profileImageUri}
+                        alt="Profile"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       />
                     ) : (
                       <User size={32} />
@@ -1406,9 +1406,9 @@ export default function App() {
                     <button className="logout-icon-btn" onClick={handleLogout} title="Log Out">
                       <LogOut size={20} />
                     </button>
-                    <button 
-                      className="secondary-btn" 
-                      style={{ padding: '4px 8px', fontSize: 11, whiteSpace: 'nowrap' }} 
+                    <button
+                      className="secondary-btn"
+                      style={{ padding: '4px 8px', fontSize: 11, whiteSpace: 'nowrap' }}
                       onClick={startEditingProfile}
                     >
                       Edit Profile
@@ -1477,10 +1477,10 @@ export default function App() {
             <div className="profile-header">
               <div className="profile-avatar-circle" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 {currentAdmin?.profileImageUri ? (
-                  <img 
-                    src={currentAdmin.profileImageUri} 
-                    alt="Admin Profile" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  <img
+                    src={currentAdmin.profileImageUri}
+                    alt="Admin Profile"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 ) : (
                   <Shield size={32} style={{ color: 'var(--danger)' }} />
@@ -1495,9 +1495,9 @@ export default function App() {
                 <button className="logout-icon-btn" onClick={handleLogout} title="Log Out">
                   <LogOut size={22} />
                 </button>
-                <button 
-                  className="secondary-btn" 
-                  style={{ padding: '4px 8px', fontSize: 11, whiteSpace: 'nowrap' }} 
+                <button
+                  className="secondary-btn"
+                  style={{ padding: '4px 8px', fontSize: 11, whiteSpace: 'nowrap' }}
                   onClick={startEditingAdminProfile}
                 >
                   Edit Profile
@@ -1521,17 +1521,17 @@ export default function App() {
                   </div>
                   <label className="secondary-btn" style={{ padding: '6px 12px', fontSize: 12, cursor: 'pointer', display: 'inline-flex', alignSelf: 'center' }}>
                     Upload Photo
-                    <input 
-                      type="file" 
-                      accept="image/*" 
-                      style={{ display: 'none' }} 
-                      onChange={handleAdminProfilePhotoChange} 
+                    <input
+                      type="file"
+                      accept="image/*"
+                      style={{ display: 'none' }}
+                      onChange={handleAdminProfilePhotoChange}
                     />
                   </label>
                   {editAdminPhoto && (
-                    <button 
-                      type="button" 
-                      className="link-btn" 
+                    <button
+                      type="button"
+                      className="link-btn"
                       style={{ color: 'var(--danger)', fontSize: 11, marginTop: 4, display: 'inline-flex', alignSelf: 'center' }}
                       onClick={() => setEditAdminPhoto(null)}
                     >
@@ -1546,10 +1546,10 @@ export default function App() {
                   <button type="submit" className="primary-btn" style={{ flex: 1, backgroundColor: 'var(--secondary)' }}>
                     Save Changes
                   </button>
-                  <button 
-                    type="button" 
-                    className="secondary-btn" 
-                    style={{ flex: 1 }} 
+                  <button
+                    type="button"
+                    className="secondary-btn"
+                    style={{ flex: 1 }}
                     onClick={() => setIsEditingAdminProfile(false)}
                   >
                     Cancel
@@ -1559,751 +1559,751 @@ export default function App() {
             ) : (
               <>
 
-            {/* Offline sync diagnostic toolbar */}
-            <div className="sync-card">
-              <div className="sync-row">
-                {isOnline ? <Wifi size={20} style={{ color: 'var(--text-secondary)' }} /> : <WifiOff size={20} style={{ color: 'var(--danger)' }} />}
-                <div className="sync-text-group">
-                  <div className="sync-title">Active Sync Daemon</div>
-                  <div className="sync-status-desc">
-                    Cloud Synced: {records.length} records connected to MongoDB
+                {/* Offline sync diagnostic toolbar */}
+                <div className="sync-card">
+                  <div className="sync-row">
+                    {isOnline ? <Wifi size={20} style={{ color: 'var(--text-secondary)' }} /> : <WifiOff size={20} style={{ color: 'var(--danger)' }} />}
+                    <div className="sync-text-group">
+                      <div className="sync-title">Active Sync Daemon</div>
+                      <div className="sync-status-desc">
+                        Cloud Synced: {records.length} records connected to MongoDB
+                      </div>
+                    </div>
+                    <label className="switch-container">
+                      <input
+                        type="checkbox"
+                        className="switch-input"
+                        checked={isOnline}
+                        onChange={handleOnlineToggle}
+                      />
+                      <span className="switch-slider"></span>
+                    </label>
+                  </div>
+
+                  {syncState.type === 'Syncing' && (
+                    <div className="syncing-notify">Transmitting data blocks to MongoDB Atlas...</div>
+                  )}
+                  {syncState.type === 'Success' && (
+                    <div className="success-notify">Synchronized {syncState.count} entries successfully!</div>
+                  )}
+                </div>
+
+                {/* Stats Dashboard Grid */}
+                <div className="stats-grid">
+                  <div className="stat-box stat-box-indigo">
+                    <div className="stat-val">{students.length}</div>
+                    <div className="stat-lbl">Students</div>
+                  </div>
+                  <div className="stat-box stat-box-green">
+                    <div className="stat-val">{records.length}</div>
+                    <div className="stat-lbl">Total Logs</div>
+                  </div>
+                  <div className="stat-box stat-box-orange">
+                    <div className="stat-val">Online</div>
+                    <div className="stat-lbl">MongoDB</div>
                   </div>
                 </div>
-                <label className="switch-container">
-                  <input
-                    type="checkbox"
-                    className="switch-input"
-                    checked={isOnline}
-                    onChange={handleOnlineToggle}
-                  />
-                  <span className="switch-slider"></span>
-                </label>
-              </div>
 
-              {syncState.type === 'Syncing' && (
-                <div className="syncing-notify">Transmitting data blocks to MongoDB Atlas...</div>
-              )}
-              {syncState.type === 'Success' && (
-                <div className="success-notify">Synchronized {syncState.count} entries successfully!</div>
-              )}
-            </div>
-
-            {/* Stats Dashboard Grid */}
-            <div className="stats-grid">
-              <div className="stat-box stat-box-indigo">
-                <div className="stat-val">{students.length}</div>
-                <div className="stat-lbl">Students</div>
-              </div>
-              <div className="stat-box stat-box-green">
-                <div className="stat-val">{records.length}</div>
-                <div className="stat-lbl">Total Logs</div>
-              </div>
-              <div className="stat-box stat-box-orange">
-                <div className="stat-val">Online</div>
-                <div className="stat-lbl">MongoDB</div>
-              </div>
-            </div>
-
-            {/* Club management choosing */}
-            <div style={{ marginBottom: 20 }}>
-              <label className="input-label" style={{ display: 'block', marginBottom: 8 }}>CLUB BEING MANAGED TODAY</label>
-              <div className="chips-scroll-row">
-                {['Samwaad', 'Chitran', 'Aarohan', 'Kadam'].map(c => (
-                  <button
-                    key={c}
-                    className={`chip-btn ${activeClub === c ? 'active' : ''}`}
-                    onClick={() => setActiveClub(c)}
-                  >
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Admin sub-segmented Control */}
-            <div className="segmented-control">
-              <button
-                className={`segment-btn ${adminTab === 'Scanner' ? 'active admin-active' : ''}`}
-                onClick={() => setAdminTab('Scanner')}
-              >
-                QR CAPTURE
-              </button>
-              <button
-                className={`segment-btn ${adminTab === 'Students' ? 'active admin-active' : ''}`}
-                onClick={() => setAdminTab('Students')}
-              >
-                STUDENT SHEET
-              </button>
-              <button
-                className={`segment-btn ${adminTab === 'Rosters' ? 'active admin-active' : ''}`}
-                onClick={() => setAdminTab('Rosters')}
-              >
-                ATTENDANCE & OFFICERS
-              </button>
-            </div>
-
-            {/* Console Subtab Content */}
-            {adminTab === 'Scanner' ? (
-              <div style={{ animation: 'fadeIn 0.3s' }}>
-                <h4 className="records-section-title">HARDWARE SCAN CAMERA</h4>
-
-                {cameraScannerActive ? (
-                  <div className="camera-box">
-                    <div id="reader" className="scanner-viewport"></div>
-                    <div className="camera-close-overlay">
-                      <button className="secondary-btn" onClick={() => setCameraScannerActive(false)}>
-                        Close Scan View
+                {/* Club management choosing */}
+                <div style={{ marginBottom: 20 }}>
+                  <label className="input-label" style={{ display: 'block', marginBottom: 8 }}>CLUB BEING MANAGED TODAY</label>
+                  <div className="chips-scroll-row">
+                    {['Samwaad', 'Chitran', 'Aarohan', 'Kadam'].map(c => (
+                      <button
+                        key={c}
+                        className={`chip-btn ${activeClub === c ? 'active' : ''}`}
+                        onClick={() => setActiveClub(c)}
+                      >
+                        {c}
                       </button>
-                    </div>
+                    ))}
                   </div>
-                ) : (
-                  <div className="open-cam-placeholder" onClick={() => setCameraScannerActive(true)}>
-                    <Camera size={32} />
-                    <span>Open Live Scan Viewport</span>
-                  </div>
-                )}
+                </div>
 
-                {/* Simulated Diagnostic Scan Deck for Emulators */}
-                <div className="sim-platform">
-                  <div className="sim-title">DIAGNOSTIC SIMULATION PLATFORM</div>
-                  <p className="sim-desc">
-                    Since hardware access may occasionally be restricted in sandbox emulators, tap any student row below to immediately emulate an authentic MD5 QR payload scan:
-                  </p>
+                {/* Admin sub-segmented Control */}
+                <div className="segmented-control">
+                  <button
+                    className={`segment-btn ${adminTab === 'Scanner' ? 'active admin-active' : ''}`}
+                    onClick={() => setAdminTab('Scanner')}
+                  >
+                    QR CAPTURE
+                  </button>
+                  <button
+                    className={`segment-btn ${adminTab === 'Students' ? 'active admin-active' : ''}`}
+                    onClick={() => setAdminTab('Students')}
+                  >
+                    STUDENT SHEET
+                  </button>
+                  <button
+                    className={`segment-btn ${adminTab === 'Rosters' ? 'active admin-active' : ''}`}
+                    onClick={() => setAdminTab('Rosters')}
+                  >
+                    ATTENDANCE & OFFICERS
+                  </button>
+                </div>
 
-                  <div className="sim-btn-row">
-                    {students.length === 0 ? (
-                      <p className="no-data-text">No students registered to simulate scan.</p>
-                    ) : (
-                      students.map((st, i) => (
-                        <div
-                          key={i}
-                          className="sim-student-btn"
-                          onClick={() => handleQrScan(db.generateSecureQrPayload(st.collegeId))}
-                        >
-                          <span className="sim-student-name">{st.name} <span className="sim-student-meta">({st.collegeId})</span></span>
-                          <span style={{ fontSize: 10, color: 'var(--primary)', fontWeight: 'bold' }}>Mark Present &rarr;</span>
+                {/* Console Subtab Content */}
+                {adminTab === 'Scanner' ? (
+                  <div style={{ animation: 'fadeIn 0.3s' }}>
+                    <h4 className="records-section-title">HARDWARE SCAN CAMERA</h4>
+
+                    {cameraScannerActive ? (
+                      <div className="camera-box">
+                        <div id="reader" className="scanner-viewport"></div>
+                        <div className="camera-close-overlay">
+                          <button className="secondary-btn" onClick={() => setCameraScannerActive(false)}>
+                            Close Scan View
+                          </button>
                         </div>
-                      ))
+                      </div>
+                    ) : (
+                      <div className="open-cam-placeholder" onClick={() => setCameraScannerActive(true)}>
+                        <Camera size={32} />
+                        <span>Open Live Scan Viewport</span>
+                      </div>
+                    )}
+
+                    {/* Simulated Diagnostic Scan Deck for Emulators */}
+                    <div className="sim-platform">
+                      <div className="sim-title">DIAGNOSTIC SIMULATION PLATFORM</div>
+                      <p className="sim-desc">
+                        Since hardware access may occasionally be restricted in sandbox emulators, tap any student row below to immediately emulate an authentic MD5 QR payload scan:
+                      </p>
+
+                      <div className="sim-btn-row">
+                        {students.length === 0 ? (
+                          <p className="no-data-text">No students registered to simulate scan.</p>
+                        ) : (
+                          students.map((st, i) => (
+                            <div
+                              key={i}
+                              className="sim-student-btn"
+                              onClick={() => handleQrScan(db.generateSecureQrPayload(st.collegeId))}
+                            >
+                              <span className="sim-student-name">{st.name} <span className="sim-student-meta">({st.collegeId})</span></span>
+                              <span style={{ fontSize: 10, color: 'var(--primary)', fontWeight: 'bold' }}>Mark Present &rarr;</span>
+                            </div>
+                          ))
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Scan confirmation feedback alert */}
+                    {scanResult && (
+                      <div className="feedback-text" style={{ margin: '16px 0', fontSize: 13, border: '1px solid var(--border)', padding: 12, borderRadius: 8 }}>
+                        {scanResult}
+                      </div>
+                    )}
+
+                    {/* Daily scans list */}
+                    <h4 className="records-section-title">MARK RECORD CHRONOLOGY TODAY</h4>
+                    {records.filter(r => r.clubName === activeClub).length === 0 ? (
+                      <p className="no-data-text">No attendees logged today.</p>
+                    ) : (
+                      records
+                        .filter(r => r.clubName === activeClub)
+                        .map((r, i) => {
+                          const st = students.find(s => s.collegeId === r.studentId);
+                          const name = r.studentName || st?.name || 'Unregistered';
+                          const course = r.course || st?.course || '';
+                          const branch = r.branch || st?.branch || '';
+                          const section = r.section || st?.section || '';
+                          return (
+                            <div key={i} className="record-item">
+                              <div>
+                                <div className="record-title">{name}</div>
+                                <div className="record-subtitle">ID: {r.studentId} {course && `| ${course}`} {branch && `(${branch})`} {section && `| Sec: ${section}`} | Scanned {r.time}</div>
+                              </div>
+                              <Check size={20} style={{ color: 'var(--secondary)' }} />
+                            </div>
+                          );
+                        })
                     )}
                   </div>
-                </div>
-
-                {/* Scan confirmation feedback alert */}
-                {scanResult && (
-                  <div className="feedback-text" style={{ margin: '16px 0', fontSize: 13, border: '1px solid var(--border)', padding: 12, borderRadius: 8 }}>
-                    {scanResult}
-                  </div>
-                )}
-
-                {/* Daily scans list */}
-                <h4 className="records-section-title">MARK RECORD CHRONOLOGY TODAY</h4>
-                {records.filter(r => r.clubName === activeClub).length === 0 ? (
-                  <p className="no-data-text">No attendees logged today.</p>
-                ) : (
-                  records
-                    .filter(r => r.clubName === activeClub)
-                    .map((r, i) => {
-                      const st = students.find(s => s.collegeId === r.studentId);
-                      const name = r.studentName || st?.name || 'Unregistered';
-                      const course = r.course || st?.course || '';
-                      const branch = r.branch || st?.branch || '';
-                      const section = r.section || st?.section || '';
-                      return (
-                        <div key={i} className="record-item">
-                          <div>
-                            <div className="record-title">{name}</div>
-                            <div className="record-subtitle">ID: {r.studentId} {course && `| ${course}`} {branch && `(${branch})`} {section && `| Sec: ${section}`} | Scanned {r.time}</div>
-                          </div>
-                          <Check size={20} style={{ color: 'var(--secondary)' }} />
-                        </div>
-                      );
-                    })
-                )}
-              </div>
-            ) : adminTab === 'Students' ? (
-              <div className="sheet-wrapper" style={{ animation: 'fadeIn 0.3s' }}>
-                {/* Spreadsheet filter bar */}
-                <div className="sheet-filter-bar">
-                  <div style={{ display: 'flex', flex: 2, gap: 8, minWidth: '220px' }}>
-                    <Search size={18} style={{ alignSelf: 'center', color: 'var(--text-secondary)' }} />
-                    <input
-                      type="text"
-                      className="styled-input"
-                      placeholder="Search name, ID, email, phone..."
-                      value={sheetSearch}
-                      onChange={e => setSheetSearch(e.target.value)}
-                    />
-                  </div>
-
-                  <select
-                    className="styled-select"
-                    value={sheetFilterCourse}
-                    onChange={e => {
-                      setSheetFilterCourse(e.target.value);
-                      setSheetFilterBranch("All");
-                    }}
-                  >
-                    <option value="All">All Courses</option>
-                    {getCoursesForCampus(verifiedInstituteCode).map(c => (
-                      <option key={c} value={c}>{c}</option>
-                    ))}
-                  </select>
-
-                  {getBranchesForCourse(sheetFilterCourse).length > 0 && (
-                    <select
-                      className="styled-select"
-                      value={sheetFilterBranch}
-                      onChange={e => setSheetFilterBranch(e.target.value)}
-                    >
-                      <option value="All">All Branches</option>
-                      {getBranchesForCourse(sheetFilterCourse).map(b => (
-                        <option key={b} value={b}>{b}</option>
-                      ))}
-                    </select>
-                  )}
-
-                  <select
-                    className="styled-select"
-                    value={sheetFilterSection}
-                    onChange={e => setSheetFilterSection(e.target.value)}
-                  >
-                    <option value="All">All Sections</option>
-                    <option value="A">Sec A</option>
-                    <option value="B">Sec B</option>
-                    <option value="C">Sec C</option>
-                  </select>
-
-                  <select
-                    className="styled-select"
-                    value={sheetFilterYear}
-                    onChange={e => setSheetFilterYear(e.target.value)}
-                  >
-                    <option value="All">All Years</option>
-                    <option value="1st Year">1st Year</option>
-                    <option value="2nd Year">2nd Year</option>
-                    <option value="3rd Year">3rd Year</option>
-                    <option value="4th Year">4th Year</option>
-                  </select>
-
-                  <select
-                    className="styled-select"
-                    value={sheetFilterClub}
-                    onChange={e => setSheetFilterClub(e.target.value)}
-                  >
-                    <option value="All">All Clubs</option>
-                    {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
-                      <option key={club} value={club}>{club}</option>
-                    ))}
-                  </select>
-
-                  {(sheetSearch || sheetFilterCourse !== "All" || sheetFilterBranch !== "All" || sheetFilterSection !== "All" || sheetFilterYear !== "All" || sheetFilterClub !== "All") && (
-                    <button
-                      className="secondary-btn clear-filter-btn"
-                      onClick={() => {
-                        setSheetSearch("");
-                        setSheetFilterCourse("All");
-                        setSheetFilterBranch("All");
-                        setSheetFilterSection("All");
-                        setSheetFilterYear("All");
-                        setSheetFilterClub("All");
-                      }}
-                    >
-                      Clear Filters
-                    </button>
-                  )}
-                </div>
-
-                {/* Spreadsheet header actions */}
-                <div className="sheet-header-actions">
-                  <span style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 600 }}>
-                    Showing {filteredStudents.length} of {students.length} students
-                  </span>
-                  
-                  <div style={{ display: 'flex', gap: 10 }}>
-                    <button
-                      className="secondary-btn"
-                      style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}
-                      onClick={() => setShowAddForm(!showAddForm)}
-                    >
-                      <UserPlus size={16} />
-                      <span>{showAddForm ? "Hide Add Form" : "Add Student"}</span>
-                    </button>
-
-                    <button
-                      className="secondary-btn"
-                      style={{ borderColor: 'var(--secondary)', color: 'var(--secondary)' }}
-                      onClick={() => handleExportStudentSheetCsv(filteredStudents)}
-                      disabled={filteredStudents.length === 0}
-                    >
-                      <Download size={16} />
-                      <span>Export CSV Sheet</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Form to add a student */}
-                {showAddForm && (
-                  <form onSubmit={handleSheetAddStudent} className="sheet-add-form-container form-group">
-                    <h4>REGISTER NEW STUDENT IN SHEET</h4>
-                    
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
-                      <div className="input-wrapper">
-                        <label className="input-label">FULL NAME</label>
+                ) : adminTab === 'Students' ? (
+                  <div className="sheet-wrapper" style={{ animation: 'fadeIn 0.3s' }}>
+                    {/* Spreadsheet filter bar */}
+                    <div className="sheet-filter-bar">
+                      <div style={{ display: 'flex', flex: 2, gap: 8, minWidth: '220px' }}>
+                        <Search size={18} style={{ alignSelf: 'center', color: 'var(--text-secondary)' }} />
                         <input
                           type="text"
                           className="styled-input"
-                          placeholder="Enter Name"
-                          value={sheetAddName}
-                          onChange={e => setSheetAddName(e.target.value)}
-                          required
+                          placeholder="Search name, ID, email, phone..."
+                          value={sheetSearch}
+                          onChange={e => setSheetSearch(e.target.value)}
                         />
                       </div>
 
-                      <div className="input-wrapper">
-                        <label className="input-label">COLLEGE ID</label>
-                        <input
-                          type="text"
-                          className="styled-input"
-                          placeholder="STKITV"
-                          value={sheetAddCollegeId}
-                          onChange={e => setSheetAddCollegeId(e.target.value.toUpperCase())}
-                          required
-                        />
-                      </div>
+                      <select
+                        className="styled-select"
+                        value={sheetFilterCourse}
+                        onChange={e => {
+                          setSheetFilterCourse(e.target.value);
+                          setSheetFilterBranch("All");
+                        }}
+                      >
+                        <option value="All">All Courses</option>
+                        {getCoursesForCampus(verifiedInstituteCode).map(c => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
+                      </select>
 
-                      <div className="input-wrapper">
-                        <label className="input-label">EMAIL ADDRESS</label>
-                        <input
-                          type="email"
-                          className="styled-input"
-                          placeholder="example@gmail.com"
-                          value={sheetAddEmail}
-                          onChange={e => setSheetAddEmail(e.target.value)}
-                          required
-                        />
-                      </div>
-
-                      <div className="input-wrapper">
-                        <label className="input-label">CONTACT NUMBER</label>
-                        <input
-                          type="tel"
-                          className="styled-input"
-                          placeholder="Enter phone number"
-                          value={sheetAddPhone}
-                          onChange={e => setSheetAddPhone(e.target.value)}
-                          required
-                        />
-                      </div>
-
-                      <div className="input-wrapper">
-                        <label className="input-label">COURSE</label>
+                      {getBranchesForCourse(sheetFilterCourse).length > 0 && (
                         <select
                           className="styled-select"
-                          value={sheetAddCourse}
-                          onChange={e => setSheetAddCourse(e.target.value)}
+                          value={sheetFilterBranch}
+                          onChange={e => setSheetFilterBranch(e.target.value)}
                         >
-                          {getCoursesForCampus(verifiedInstituteCode).map(c => (
-                            <option key={c} value={c}>{c}</option>
+                          <option value="All">All Branches</option>
+                          {getBranchesForCourse(sheetFilterCourse).map(b => (
+                            <option key={b} value={b}>{b}</option>
                           ))}
                         </select>
-                      </div>
-
-                      {getBranchesForCourse(sheetAddCourse).length > 0 && (
-                        <div className="input-wrapper">
-                          <label className="input-label">BRANCH</label>
-                          <select
-                            className="styled-select"
-                            value={sheetAddBranch}
-                            onChange={e => setSheetAddBranch(e.target.value)}
-                          >
-                            {getBranchesForCourse(sheetAddCourse).map(b => (
-                              <option key={b} value={b}>{b}</option>
-                            ))}
-                          </select>
-                        </div>
                       )}
 
-                      <div className="input-wrapper">
-                        <label className="input-label">SECTION</label>
-                        <select
-                          className="styled-select"
-                          value={sheetAddSection}
-                          onChange={e => setSheetAddSection(e.target.value)}
-                        >
-                          <option value="A">Sec A</option>
-                          <option value="B">Sec B</option>
-                          <option value="C">Sec C</option>
-                        </select>
-                      </div>
+                      <select
+                        className="styled-select"
+                        value={sheetFilterSection}
+                        onChange={e => setSheetFilterSection(e.target.value)}
+                      >
+                        <option value="All">All Sections</option>
+                        <option value="A">Sec A</option>
+                        <option value="B">Sec B</option>
+                        <option value="C">Sec C</option>
+                      </select>
 
-                      <div className="input-wrapper">
-                        <label className="input-label">ACADEMIC YEAR</label>
-                        <select
-                          className="styled-select"
-                          value={sheetAddYear}
-                          onChange={e => setSheetAddYear(e.target.value)}
-                        >
-                          <option value="1st Year">1st Year</option>
-                          <option value="2nd Year">2nd Year</option>
-                          <option value="3rd Year">3rd Year</option>
-                          <option value="4th Year">4th Year</option>
-                        </select>
-                      </div>
+                      <select
+                        className="styled-select"
+                        value={sheetFilterYear}
+                        onChange={e => setSheetFilterYear(e.target.value)}
+                      >
+                        <option value="All">All Years</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                      </select>
 
-                      <div className="input-wrapper">
-                        <label className="input-label">CLUB</label>
-                        <select
-                          className="styled-select"
-                          value={sheetAddClub}
-                          onChange={e => setSheetAddClub(e.target.value)}
-                        >
-                          {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
-                            <option key={club} value={club}>{club}</option>
-                          ))}
-                        </select>
-                      </div>
+                      <select
+                        className="styled-select"
+                        value={sheetFilterClub}
+                        onChange={e => setSheetFilterClub(e.target.value)}
+                      >
+                        <option value="All">All Clubs</option>
+                        {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
+                          <option key={club} value={club}>{club}</option>
+                        ))}
+                      </select>
 
-                      <div className="input-wrapper">
-                        <label className="input-label">SECURE ACCESS PASSWORD</label>
-                        <input
-                          type="password"
-                          className="styled-input"
-                          placeholder="Password"
-                          value={sheetAddPassword}
-                          onChange={e => setSheetAddPassword(e.target.value)}
-                          required
-                        />
+                      {(sheetSearch || sheetFilterCourse !== "All" || sheetFilterBranch !== "All" || sheetFilterSection !== "All" || sheetFilterYear !== "All" || sheetFilterClub !== "All") && (
+                        <button
+                          className="secondary-btn clear-filter-btn"
+                          onClick={() => {
+                            setSheetSearch("");
+                            setSheetFilterCourse("All");
+                            setSheetFilterBranch("All");
+                            setSheetFilterSection("All");
+                            setSheetFilterYear("All");
+                            setSheetFilterClub("All");
+                          }}
+                        >
+                          Clear Filters
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Spreadsheet header actions */}
+                    <div className="sheet-header-actions">
+                      <span style={{ fontSize: 13, color: 'var(--text-secondary)', fontWeight: 600 }}>
+                        Showing {filteredStudents.length} of {students.length} students
+                      </span>
+
+                      <div style={{ display: 'flex', gap: 10 }}>
+                        <button
+                          className="secondary-btn"
+                          style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}
+                          onClick={() => setShowAddForm(!showAddForm)}
+                        >
+                          <UserPlus size={16} />
+                          <span>{showAddForm ? "Hide Add Form" : "Add Student"}</span>
+                        </button>
+
+                        <button
+                          className="secondary-btn"
+                          style={{ borderColor: 'var(--secondary)', color: 'var(--secondary)' }}
+                          onClick={() => handleExportStudentSheetCsv(filteredStudents)}
+                          disabled={filteredStudents.length === 0}
+                        >
+                          <Download size={16} />
+                          <span>Export CSV Sheet</span>
+                        </button>
                       </div>
                     </div>
 
-                    {sheetAddStatus && <div className="feedback-text">{sheetAddStatus}</div>}
+                    {/* Form to add a student */}
+                    {showAddForm && (
+                      <form onSubmit={handleSheetAddStudent} className="sheet-add-form-container form-group">
+                        <h4>REGISTER NEW STUDENT IN SHEET</h4>
 
-                    <button type="submit" className="primary-btn" style={{ padding: '10px 14px' }}>
-                      Add Roster Student
-                    </button>
-                  </form>
-                )}
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+                          <div className="input-wrapper">
+                            <label className="input-label">FULL NAME</label>
+                            <input
+                              type="text"
+                              className="styled-input"
+                              placeholder="Enter Name"
+                              value={sheetAddName}
+                              onChange={e => setSheetAddName(e.target.value)}
+                              required
+                            />
+                          </div>
 
-                {/* Table Sheet View */}
-                <div className="sheet-table-container">
-                  {filteredStudents.length === 0 ? (
-                    <p className="no-data-text">No student records match active filters.</p>
-                  ) : (
-                    <table className="sheet-table">
-                      <thead>
-                        <tr>
-                          <th className="sno-col">#</th>
-                          <th onClick={() => handleSort('name')}>
-                            Student Name
-                            {sheetSortColumn === 'name' && (
-                              <span className="sort-indicator">{sheetSortDirection === 'asc' ? '▲' : '▼'}</span>
-                            )}
-                            {!sheetSortColumn && <span className="sort-indicator">↕</span>}
-                          </th>
-                          <th onClick={() => handleSort('collegeId')}>
-                            College ID
-                            {sheetSortColumn === 'collegeId' && (
-                              <span className="sort-indicator">{sheetSortDirection === 'asc' ? '▲' : '▼'}</span>
-                            )}
-                          </th>
-                          <th>Email Address</th>
-                          <th>Phone Number</th>
-                          <th onClick={() => handleSort('course')}>Course</th>
-                          <th>Branch</th>
-                          <th>Sec</th>
-                          <th>Year</th>
-                          <th>Club</th>
-                          <th className="actions-col">Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filteredStudents.map((st, i) => {
-                          const isEditing = editingStudentId === st.collegeId;
-                          return isEditing ? (
-                            <tr key={st.collegeId} className="editing-row">
-                              <td className="sno-col">{i + 1}</td>
-                              <td>
-                                <input
-                                  type="text"
-                                  className="sheet-cell-input"
-                                  value={editRowName}
-                                  onChange={e => setEditRowName(e.target.value)}
-                                  required
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="text"
-                                  className="sheet-cell-input"
-                                  value={editRowCollegeId}
-                                  onChange={e => setEditRowCollegeId(e.target.value.toUpperCase())}
-                                  required
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="email"
-                                  className="sheet-cell-input"
-                                  value={editRowEmail}
-                                  onChange={e => setEditRowEmail(e.target.value)}
-                                  required
-                                />
-                              </td>
-                              <td>
-                                <input
-                                  type="tel"
-                                  className="sheet-cell-input"
-                                  value={editRowPhone}
-                                  onChange={e => setEditRowPhone(e.target.value)}
-                                  required
-                                />
-                              </td>
-                              <td>
-                                <select
-                                  className="sheet-cell-select"
-                                  value={editRowCourse}
-                                  onChange={e => setEditRowCourse(e.target.value)}
-                                >
-                                  {getCoursesForCampus(verifiedInstituteCode).map(c => (
-                                    <option key={c} value={c}>{c}</option>
-                                  ))}
-                                </select>
-                              </td>
-                              <td>
-                                {getBranchesForCourse(editRowCourse).length > 0 ? (
-                                  <select
-                                    className="sheet-cell-select"
-                                    value={editRowBranch}
-                                    onChange={e => setEditRowBranch(e.target.value)}
-                                  >
-                                    {getBranchesForCourse(editRowCourse).map(b => (
-                                      <option key={b} value={b}>{b}</option>
-                                    ))}
-                                  </select>
-                                ) : (
-                                  <span style={{ color: 'var(--text-secondary)', fontSize: 11 }}>N/A</span>
+                          <div className="input-wrapper">
+                            <label className="input-label">COLLEGE ID</label>
+                            <input
+                              type="text"
+                              className="styled-input"
+                              placeholder="STKITV"
+                              value={sheetAddCollegeId}
+                              onChange={e => setSheetAddCollegeId(e.target.value.toUpperCase())}
+                              required
+                            />
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">EMAIL ADDRESS</label>
+                            <input
+                              type="email"
+                              className="styled-input"
+                              placeholder="example@gmail.com"
+                              value={sheetAddEmail}
+                              onChange={e => setSheetAddEmail(e.target.value)}
+                              required
+                            />
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">CONTACT NUMBER</label>
+                            <input
+                              type="tel"
+                              className="styled-input"
+                              placeholder="Enter phone number"
+                              value={sheetAddPhone}
+                              onChange={e => setSheetAddPhone(e.target.value)}
+                              required
+                            />
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">COURSE</label>
+                            <select
+                              className="styled-select"
+                              value={sheetAddCourse}
+                              onChange={e => setSheetAddCourse(e.target.value)}
+                            >
+                              {getCoursesForCampus(verifiedInstituteCode).map(c => (
+                                <option key={c} value={c}>{c}</option>
+                              ))}
+                            </select>
+                          </div>
+
+                          {getBranchesForCourse(sheetAddCourse).length > 0 && (
+                            <div className="input-wrapper">
+                              <label className="input-label">BRANCH</label>
+                              <select
+                                className="styled-select"
+                                value={sheetAddBranch}
+                                onChange={e => setSheetAddBranch(e.target.value)}
+                              >
+                                {getBranchesForCourse(sheetAddCourse).map(b => (
+                                  <option key={b} value={b}>{b}</option>
+                                ))}
+                              </select>
+                            </div>
+                          )}
+
+                          <div className="input-wrapper">
+                            <label className="input-label">SECTION</label>
+                            <select
+                              className="styled-select"
+                              value={sheetAddSection}
+                              onChange={e => setSheetAddSection(e.target.value)}
+                            >
+                              <option value="A">Sec A</option>
+                              <option value="B">Sec B</option>
+                              <option value="C">Sec C</option>
+                            </select>
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">ACADEMIC YEAR</label>
+                            <select
+                              className="styled-select"
+                              value={sheetAddYear}
+                              onChange={e => setSheetAddYear(e.target.value)}
+                            >
+                              <option value="1st Year">1st Year</option>
+                              <option value="2nd Year">2nd Year</option>
+                              <option value="3rd Year">3rd Year</option>
+                              <option value="4th Year">4th Year</option>
+                            </select>
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">CLUB</label>
+                            <select
+                              className="styled-select"
+                              value={sheetAddClub}
+                              onChange={e => setSheetAddClub(e.target.value)}
+                            >
+                              {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
+                                <option key={club} value={club}>{club}</option>
+                              ))}
+                            </select>
+                          </div>
+
+                          <div className="input-wrapper">
+                            <label className="input-label">SECURE ACCESS PASSWORD</label>
+                            <input
+                              type="password"
+                              className="styled-input"
+                              placeholder="Password"
+                              value={sheetAddPassword}
+                              onChange={e => setSheetAddPassword(e.target.value)}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        {sheetAddStatus && <div className="feedback-text">{sheetAddStatus}</div>}
+
+                        <button type="submit" className="primary-btn" style={{ padding: '10px 14px' }}>
+                          Add Roster Student
+                        </button>
+                      </form>
+                    )}
+
+                    {/* Table Sheet View */}
+                    <div className="sheet-table-container">
+                      {filteredStudents.length === 0 ? (
+                        <p className="no-data-text">No student records match active filters.</p>
+                      ) : (
+                        <table className="sheet-table">
+                          <thead>
+                            <tr>
+                              <th className="sno-col">#</th>
+                              <th onClick={() => handleSort('name')}>
+                                Student Name
+                                {sheetSortColumn === 'name' && (
+                                  <span className="sort-indicator">{sheetSortDirection === 'asc' ? '▲' : '▼'}</span>
                                 )}
-                              </td>
-                              <td>
-                                <select
-                                  className="sheet-cell-select"
-                                  value={editRowSection}
-                                  onChange={e => setEditRowSection(e.target.value)}
-                                >
-                                  <option value="A">A</option>
-                                  <option value="B">B</option>
-                                  <option value="C">C</option>
-                                </select>
-                              </td>
-                              <td>
-                                <select
-                                  className="sheet-cell-select"
-                                  value={editRowYear}
-                                  onChange={e => setEditRowYear(e.target.value)}
-                                >
-                                  <option value="1st Year">1st Year</option>
-                                  <option value="2nd Year">2nd Year</option>
-                                  <option value="3rd Year">3rd Year</option>
-                                  <option value="4th Year">4th Year</option>
-                                </select>
-                              </td>
-                              <td>
-                                <select
-                                  className="sheet-cell-select"
-                                  value={editRowClub}
-                                  onChange={e => setEditRowClub(e.target.value)}
-                                >
-                                  {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
-                                    <option key={club} value={club}>{club}</option>
-                                  ))}
-                                </select>
-                              </td>
-                              <td className="actions-col">
-                                <div className="sheet-actions-group">
-                                  <button
-                                    type="button"
-                                    className="sheet-row-btn save-btn"
-                                    onClick={e => handleSaveSheetEdit(e, st.collegeId)}
-                                    title="Save Roster Cell"
-                                  >
-                                    <Save size={14} />
-                                  </button>
-                                  <button
-                                    type="button"
-                                    className="sheet-row-btn cancel-btn"
-                                    onClick={() => setEditingStudentId(null)}
-                                    title="Cancel Edit"
-                                  >
-                                    <X size={14} />
-                                  </button>
-                                </div>
-                              </td>
+                                {!sheetSortColumn && <span className="sort-indicator">↕</span>}
+                              </th>
+                              <th onClick={() => handleSort('collegeId')}>
+                                College ID
+                                {sheetSortColumn === 'collegeId' && (
+                                  <span className="sort-indicator">{sheetSortDirection === 'asc' ? '▲' : '▼'}</span>
+                                )}
+                              </th>
+                              <th>Email Address</th>
+                              <th>Phone Number</th>
+                              <th onClick={() => handleSort('course')}>Course</th>
+                              <th>Branch</th>
+                              <th>Sec</th>
+                              <th>Year</th>
+                              <th>Club</th>
+                              <th className="actions-col">Actions</th>
                             </tr>
-                          ) : (
-                            <tr key={st.collegeId}>
-                              <td className="sno-col">{i + 1}</td>
-                              <td style={{ fontWeight: 600 }}>{st.name}</td>
-                              <td>{st.collegeId}</td>
-                              <td>{st.email}</td>
-                              <td>{st.phoneNumber}</td>
-                              <td>{st.course}</td>
-                              <td>{st.branch || "N/A"}</td>
-                              <td>{st.section}</td>
-                              <td>{st.year}</td>
-                              <td>{st.clubName}</td>
-                              <td className="actions-col">
-                                <div className="sheet-actions-group">
-                                  <button
-                                    type="button"
-                                    className="sheet-row-btn edit-btn"
-                                    onClick={() => startEditingRow(st)}
-                                    title="Edit Row"
-                                  >
-                                    <Edit size={14} />
-                                  </button>
-                                  <button
-                                    type="button"
-                                    className="sheet-row-btn delete-btn"
-                                    onClick={() => handleRemoveStudent(st.collegeId)}
-                                    title="Delete Row"
-                                  >
-                                    <Trash2 size={14} />
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
-                  )}
-                </div>
+                          </thead>
+                          <tbody>
+                            {filteredStudents.map((st, i) => {
+                              const isEditing = editingStudentId === st.collegeId;
+                              return isEditing ? (
+                                <tr key={st.collegeId} className="editing-row">
+                                  <td className="sno-col">{i + 1}</td>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      className="sheet-cell-input"
+                                      value={editRowName}
+                                      onChange={e => setEditRowName(e.target.value)}
+                                      required
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="text"
+                                      className="sheet-cell-input"
+                                      value={editRowCollegeId}
+                                      onChange={e => setEditRowCollegeId(e.target.value.toUpperCase())}
+                                      required
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="email"
+                                      className="sheet-cell-input"
+                                      value={editRowEmail}
+                                      onChange={e => setEditRowEmail(e.target.value)}
+                                      required
+                                    />
+                                  </td>
+                                  <td>
+                                    <input
+                                      type="tel"
+                                      className="sheet-cell-input"
+                                      value={editRowPhone}
+                                      onChange={e => setEditRowPhone(e.target.value)}
+                                      required
+                                    />
+                                  </td>
+                                  <td>
+                                    <select
+                                      className="sheet-cell-select"
+                                      value={editRowCourse}
+                                      onChange={e => setEditRowCourse(e.target.value)}
+                                    >
+                                      {getCoursesForCampus(verifiedInstituteCode).map(c => (
+                                        <option key={c} value={c}>{c}</option>
+                                      ))}
+                                    </select>
+                                  </td>
+                                  <td>
+                                    {getBranchesForCourse(editRowCourse).length > 0 ? (
+                                      <select
+                                        className="sheet-cell-select"
+                                        value={editRowBranch}
+                                        onChange={e => setEditRowBranch(e.target.value)}
+                                      >
+                                        {getBranchesForCourse(editRowCourse).map(b => (
+                                          <option key={b} value={b}>{b}</option>
+                                        ))}
+                                      </select>
+                                    ) : (
+                                      <span style={{ color: 'var(--text-secondary)', fontSize: 11 }}>N/A</span>
+                                    )}
+                                  </td>
+                                  <td>
+                                    <select
+                                      className="sheet-cell-select"
+                                      value={editRowSection}
+                                      onChange={e => setEditRowSection(e.target.value)}
+                                    >
+                                      <option value="A">A</option>
+                                      <option value="B">B</option>
+                                      <option value="C">C</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <select
+                                      className="sheet-cell-select"
+                                      value={editRowYear}
+                                      onChange={e => setEditRowYear(e.target.value)}
+                                    >
+                                      <option value="1st Year">1st Year</option>
+                                      <option value="2nd Year">2nd Year</option>
+                                      <option value="3rd Year">3rd Year</option>
+                                      <option value="4th Year">4th Year</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <select
+                                      className="sheet-cell-select"
+                                      value={editRowClub}
+                                      onChange={e => setEditRowClub(e.target.value)}
+                                    >
+                                      {['Samwaad', 'Chitran', 'Alaap', 'Social', 'Yoddha', 'Techno', 'Natraj', 'Aarohan', 'Kadam'].map(club => (
+                                        <option key={club} value={club}>{club}</option>
+                                      ))}
+                                    </select>
+                                  </td>
+                                  <td className="actions-col">
+                                    <div className="sheet-actions-group">
+                                      <button
+                                        type="button"
+                                        className="sheet-row-btn save-btn"
+                                        onClick={e => handleSaveSheetEdit(e, st.collegeId)}
+                                        title="Save Roster Cell"
+                                      >
+                                        <Save size={14} />
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="sheet-row-btn cancel-btn"
+                                        onClick={() => setEditingStudentId(null)}
+                                        title="Cancel Edit"
+                                      >
+                                        <X size={14} />
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              ) : (
+                                <tr key={st.collegeId}>
+                                  <td className="sno-col">{i + 1}</td>
+                                  <td style={{ fontWeight: 600 }}>{st.name}</td>
+                                  <td>{st.collegeId}</td>
+                                  <td>{st.email}</td>
+                                  <td>{st.phoneNumber}</td>
+                                  <td>{st.course}</td>
+                                  <td>{st.branch || "N/A"}</td>
+                                  <td>{st.section}</td>
+                                  <td>{st.year}</td>
+                                  <td>{st.clubName}</td>
+                                  <td className="actions-col">
+                                    <div className="sheet-actions-group">
+                                      <button
+                                        type="button"
+                                        className="sheet-row-btn edit-btn"
+                                        onClick={() => startEditingRow(st)}
+                                        title="Edit Row"
+                                      >
+                                        <Edit size={14} />
+                                      </button>
+                                      <button
+                                        type="button"
+                                        className="sheet-row-btn delete-btn"
+                                        onClick={() => handleRemoveStudent(st.collegeId)}
+                                        title="Delete Row"
+                                      >
+                                        <Trash2 size={14} />
+                                      </button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      )}
+                    </div>
 
-                {sheetEditStatus && <div className="feedback-text">{sheetEditStatus}</div>}
-              </div>
-            ) : (
-              <div style={{ animation: 'fadeIn 0.3s' }}>
-                {/* Export spreadsheet reports panel */}
-                {currentAdmin?.isSeniorAdmin && (
-                  <div className="export-panel">
-                    <div className="export-title">EXPORT SPREADSHEETS</div>
-                    <p className="export-desc">
-                      Export a fully compiled CSV file grouped by class branches, incorporating offline synced registry IDs and timestamps.
-                    </p>
-                    <button className="primary-btn" style={{ backgroundColor: 'var(--secondary)' }} onClick={handleExportCsv}>
-                      <FileText size={18} />
-                      <span>Download CSV Spreadsheet</span>
-                    </button>
+                    {sheetEditStatus && <div className="feedback-text">{sheetEditStatus}</div>}
                   </div>
-                )}
-
-                {/* Complete Roster lists with toggles and deletes */}
-                <h4 className="records-section-title">COMPREHENSIVE STUDENT REGISTER ({students.length})</h4>
-                {students.length === 0 ? (
-                  <p className="no-data-text">No students registered on local state yet.</p>
                 ) : (
-                  students.map((st, i) => {
-                    const isPresentToday = records.some(r => r.studentId === st.collegeId && r.date === todayDate && r.status === 'Present');
-                    return (
-                      <div key={i} className="student-list-item">
-                        <div className="student-list-details">
-                          <div className="student-list-name">{st.name}</div>
-                          <div className="student-list-meta">ID: {st.collegeId} | Sec: {st.section}</div>
-                          <div className="student-list-meta">{st.course} - {st.branch} ({st.year})</div>
-                        </div>
-
-                        <div className="toggle-btn-group">
-                          <button
-                            className={`status-btn-toggle ${isPresentToday ? 'present-active' : ''}`}
-                            onClick={() => handleManualAttendance(st.collegeId, todayDate, 'Present')}
-                          >
-                            PRESENT
-                          </button>
-                          <button
-                            className={`status-btn-toggle ${!isPresentToday ? 'absent-active' : ''}`}
-                            onClick={() => handleManualAttendance(st.collegeId, todayDate, 'Absent')}
-                          >
-                            ABSENT
-                          </button>
-                          <button className="trash-btn" onClick={() => handleRemoveStudent(st.collegeId)} title="Remove Student">
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
+                  <div style={{ animation: 'fadeIn 0.3s' }}>
+                    {/* Export spreadsheet reports panel */}
+                    {currentAdmin?.isSeniorAdmin && (
+                      <div className="export-panel">
+                        <div className="export-title">EXPORT SPREADSHEETS</div>
+                        <p className="export-desc">
+                          Export a fully compiled CSV file grouped by class branches, incorporating offline synced registry IDs and timestamps.
+                        </p>
+                        <button className="primary-btn" style={{ backgroundColor: 'var(--secondary)' }} onClick={handleExportCsv}>
+                          <FileText size={18} />
+                          <span>Download CSV Spreadsheet</span>
+                        </button>
                       </div>
-                    );
-                  })
-                )}
+                    )}
 
-                {/* Senior Admin section */}
-                {currentAdmin?.isSeniorAdmin && (
-                  <div className="senior-section-box">
-                    <h4 className="records-section-title">SENIOR MANAGEMENT OPERATIONS</h4>
-
-                    {/* regular admin provision registration */}
-                    <form onSubmit={handleCreateRegularAdmin} className="form-group" style={{ border: '1px solid var(--border)', padding: 16, borderRadius: 12 }}>
-                      <label className="input-label">REGISTER NEW REGULAR ADMINISTRATOR</label>
-                      <input
-                        type="email"
-                        className="styled-input danger-focus"
-                        placeholder="Enter Admin ID / Email"
-                        value={adminRegisterId}
-                        onChange={(e) => setAdminRegisterId(e.target.value)}
-                        required
-                      />
-                      <input
-                        type="password"
-                        className="styled-input danger-focus"
-                        placeholder="Access Token Password"
-                        value={adminRegisterPassword}
-                        onChange={(e) => setAdminRegisterPassword(e.target.value)}
-                        required
-                      />
-                      <button type="submit" className="primary-btn" style={{ backgroundColor: 'var(--danger)' }}>
-                        <Plus size={16} />
-                        <span>Provision Regular Admin</span>
-                      </button>
-                    </form>
-
-                    {/* Active officers list */}
-                    <div style={{ marginTop: 12 }}>
-                      <label className="input-label" style={{ display: 'block', marginBottom: 8 }}>ACTIVE OFFICERS LIST</label>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                        {admins.map((adm, index) => (
-                          <div key={index} className="admin-member-item">
-                            <div>
-                              <div className="admin-member-email">{adm.adminId}</div>
-                              <div className="admin-member-role">{adm.isSeniorAdmin ? 'Senior Admin' : 'Regular Admin'}</div>
+                    {/* Complete Roster lists with toggles and deletes */}
+                    <h4 className="records-section-title">COMPREHENSIVE STUDENT REGISTER ({students.length})</h4>
+                    {students.length === 0 ? (
+                      <p className="no-data-text">No students registered on local state yet.</p>
+                    ) : (
+                      students.map((st, i) => {
+                        const isPresentToday = records.some(r => r.studentId === st.collegeId && r.date === todayDate && r.status === 'Present');
+                        return (
+                          <div key={i} className="student-list-item">
+                            <div className="student-list-details">
+                              <div className="student-list-name">{st.name}</div>
+                              <div className="student-list-meta">ID: {st.collegeId} | Sec: {st.section}</div>
+                              <div className="student-list-meta">{st.course} - {st.branch} ({st.year})</div>
                             </div>
 
-                            <div className="admin-actions">
-                              {!adm.isSeniorAdmin && (
-                                <>
-                                  <button type="button" className="mini-border-btn" onClick={() => handlePromoteAdmin(adm.adminId)}>
-                                    PROMOTE
-                                  </button>
-                                  <button type="button" className="mini-border-btn revoke-btn" onClick={() => handleRemoveAdmin(adm.adminId)}>
-                                    REVOKE
-                                  </button>
-                                </>
-                              )}
-
-                              {adm.isSeniorAdmin && currentAdmin?.adminId.toLowerCase() === "kumarkartikeysahu@gmail.com" && adm.adminId.toLowerCase() !== "kumarkartikeysahu@gmail.com" && (
-                                <button type="button" className="mini-border-btn revoke-btn" onClick={() => handleRemoveAdmin(adm.adminId)}>
-                                  REVOKE
-                                </button>
-                              )}
+                            <div className="toggle-btn-group">
+                              <button
+                                className={`status-btn-toggle ${isPresentToday ? 'present-active' : ''}`}
+                                onClick={() => handleManualAttendance(st.collegeId, todayDate, 'Present')}
+                              >
+                                PRESENT
+                              </button>
+                              <button
+                                className={`status-btn-toggle ${!isPresentToday ? 'absent-active' : ''}`}
+                                onClick={() => handleManualAttendance(st.collegeId, todayDate, 'Absent')}
+                              >
+                                ABSENT
+                              </button>
+                              <button className="trash-btn" onClick={() => handleRemoveStudent(st.collegeId)} title="Remove Student">
+                                <Trash2 size={16} />
+                              </button>
                             </div>
                           </div>
-                        ))}
+                        );
+                      })
+                    )}
+
+                    {/* Senior Admin section */}
+                    {currentAdmin?.isSeniorAdmin && (
+                      <div className="senior-section-box">
+                        <h4 className="records-section-title">SENIOR MANAGEMENT OPERATIONS</h4>
+
+                        {/* regular admin provision registration */}
+                        <form onSubmit={handleCreateRegularAdmin} className="form-group" style={{ border: '1px solid var(--border)', padding: 16, borderRadius: 12 }}>
+                          <label className="input-label">REGISTER NEW REGULAR ADMINISTRATOR</label>
+                          <input
+                            type="email"
+                            className="styled-input danger-focus"
+                            placeholder="Enter Admin ID / Email"
+                            value={adminRegisterId}
+                            onChange={(e) => setAdminRegisterId(e.target.value)}
+                            required
+                          />
+                          <input
+                            type="password"
+                            className="styled-input danger-focus"
+                            placeholder="Access Token Password"
+                            value={adminRegisterPassword}
+                            onChange={(e) => setAdminRegisterPassword(e.target.value)}
+                            required
+                          />
+                          <button type="submit" className="primary-btn" style={{ backgroundColor: 'var(--danger)' }}>
+                            <Plus size={16} />
+                            <span>Provision Regular Admin</span>
+                          </button>
+                        </form>
+
+                        {/* Active officers list */}
+                        <div style={{ marginTop: 12 }}>
+                          <label className="input-label" style={{ display: 'block', marginBottom: 8 }}>ACTIVE OFFICERS LIST</label>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                            {admins.map((adm, index) => (
+                              <div key={index} className="admin-member-item">
+                                <div>
+                                  <div className="admin-member-email">{adm.adminId}</div>
+                                  <div className="admin-member-role">{adm.isSeniorAdmin ? 'Senior Admin' : 'Regular Admin'}</div>
+                                </div>
+
+                                <div className="admin-actions">
+                                  {!adm.isSeniorAdmin && (
+                                    <>
+                                      <button type="button" className="mini-border-btn" onClick={() => handlePromoteAdmin(adm.adminId)}>
+                                        PROMOTE
+                                      </button>
+                                      <button type="button" className="mini-border-btn revoke-btn" onClick={() => handleRemoveAdmin(adm.adminId)}>
+                                        REVOKE
+                                      </button>
+                                    </>
+                                  )}
+
+                                  {adm.isSeniorAdmin && currentAdmin?.adminId.toLowerCase() === "kumarkartikeysahu@gmail.com" && adm.adminId.toLowerCase() !== "kumarkartikeysahu@gmail.com" && (
+                                    <button type="button" className="mini-border-btn revoke-btn" onClick={() => handleRemoveAdmin(adm.adminId)}>
+                                      REVOKE
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 )}
-              </div>
+              </>
             )}
-          </>
-        )}
-      </div>
+          </div>
         )}
       </main>
     </div>
